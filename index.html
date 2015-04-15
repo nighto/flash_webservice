@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  </head>
+  <body>
+    <script>
+
+$(document).ready(function(){
+	var fc_url = 'http://www.flashpegasus.com.br/FlashOnline/rest/hawb/getconsultalistaAR/';
+	var getConsultaListaAR_obj = {
+		consultaListaHawbArXML: {
+			usuario: 'sao.erick',
+			senha: 123,
+			cliente_id: '',
+			numEncCli: '',
+			hawb: 00813397114
+		}
+	};
+
+	$.ajax({
+		url: fc_url,
+		type: 'POST',
+		data: getConsultaListaAR_obj,
+		success: function(response){
+			console.log(response);
+		},
+		error: function(response){
+			console.log(response);
+		}
+	});
+});
+
+    </script>
+  </body>
+</html>
